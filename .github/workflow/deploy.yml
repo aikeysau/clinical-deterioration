@@ -28,6 +28,10 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Disable jekyll
+      - name: Disable Jekyll
+        run: touch dist/.nojekyll
+
       # Step 5: Deploy the built files to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
