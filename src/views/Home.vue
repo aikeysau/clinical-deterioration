@@ -1,13 +1,10 @@
 <template>
-  <div style="text-align:center; margin-top:50px;">
-    <h1>Clinical Deterioration App</h1>
-    <p>Your Vue app is working!</p>
-  </div>
+  <section>
+    <h3>Welcome to AI-KEYS Clinical Deterioration Platform</h3>
+    <p>
+      This site showcases AI-driven tools for monitoring and predicting patient
+      deterioration. Our goal is to support clinicians in making safer, faster,
+      and more informed decisions.
+    </p>
+  </section>
 </template>
-
-<script>
-export default {
-  name: 'Home',
-}
-</script>
-
