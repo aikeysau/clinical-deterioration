@@ -9,7 +9,9 @@
 </template>
 
 <script>
+import Banner from '../components/Banner.vue'
 export default {
-  name: 'Projects'
+    name: 'Projects',
+  components: { Banner }
 }
 </script>

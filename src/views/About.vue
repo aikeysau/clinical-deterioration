@@ -1,3 +1,6 @@
+
+
+
 <template>
   <section>
     <h3>About AI-KEYS</h3>
@@ -9,15 +12,9 @@
 </template>
 
 <script>
+import Banner from '../components/Banner.vue'
 export default {
-  name: 'About'
+    name: 'About',
+  components: { Banner }
 }
 </script>
-
-<!-- <style scoped>
-section {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-</style> -->

@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <!-- 🌟 Banner Section -->
-    <header class="banner"></header>
+    <!-- Include the banner component -->
+    <Banner />
 
-    <!-- 🧭 Navigation Menu -->
+    <!-- Navigation Menu -->
     <nav class="nav">
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
       <router-link to="/projects">Projects</router-link>
     </nav>
 
-    <!-- 📄 Main Page Content -->
+    <!-- Main content -->
     <main class="content">
       <router-view />
     </main>
@@ -18,8 +18,13 @@
 </template>
 
 <script>
+import Banner from './components/Banner.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Banner
+  }
 }
 </script>
 
@@ -30,18 +35,10 @@ body {
 }
 
 .banner {
-  height: 250px;
-  background: url('../src/assets/banner-logo.png') no-repeat center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(135deg, #4b0082, #7b2cbf);
   color: white;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-}
-
-.banner-image {
-  max-width: 200px; /* adjust size */
-  margin-bottom: 1rem;
+  text-align: center;
+  padding: 2rem 1rem;
 }
 
 .banner h1 {
