@@ -1,10 +1,7 @@
 <template>
   <div id="app">
     <!-- 🌟 Banner Section -->
-    <header class="banner">
-      <h1>AI-KEYS</h1>
-      <h2>Artificial Intelligence Keeping You Safer</h2>
-    </header>
+    <header class="banner"></header>
 
     <!-- 🧭 Navigation Menu -->
     <nav class="nav">
@@ -33,10 +30,18 @@ body {
 }
 
 .banner {
-  background: linear-gradient(135deg, #4b0082, #7b2cbf);
+  height: 250px;
+  background: url('../src/assets/banner-logo.png') no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
-  text-align: center;
-  padding: 2rem 1rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.banner-image {
+  max-width: 200px; /* adjust size */
+  margin-bottom: 1rem;
 }
 
 .banner h1 {

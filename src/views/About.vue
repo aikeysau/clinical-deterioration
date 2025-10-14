@@ -14,10 +14,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<!-- <style scoped>
 section {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
 }
-</style>
+</style> -->

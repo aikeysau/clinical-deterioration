@@ -7,3 +7,9 @@
     </p>
   </section>
 </template>
+
+<script>
+export default {
+  name: 'Projects'
+}
+</script>
