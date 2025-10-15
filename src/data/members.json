@@ -1,0 +1,20 @@
+[
+  {
+    "id": "anton",
+    "name": "Anton van der Vegt",
+    "role": "Researcher",
+    "background": "Computer Scientist",
+    "belongTolist": "Supervisor",
+    "photo": "assets/members/anton.jpg",
+    "bio": "Anton works on AI models for patient deterioration."
+  },
+  {
+    "id": "monica",
+    "name": "Monica Noselli",
+    "role": "PhD Candidate",
+    "background": "Computer Scientist",
+    "belongTolist": "PhD Candidate",
+    "photo": "assets/members/MonicaNoselli.jpg",
+    "bio": "Monica builds the web platform and interfaces."
+  }
+]
