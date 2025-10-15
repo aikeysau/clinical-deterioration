@@ -3,6 +3,7 @@
     <!-- Include the banner component -->
     <Banner />
 
+
     <!-- Navigation Menu -->
     <nav class="nav">
       <router-link to="/">Home</router-link>
@@ -12,7 +13,7 @@
     </nav>
 
     <!-- Main content -->
-    <main class="content">
+    <main class="content-wrapper">
       <router-view />
     </main>
   </div>

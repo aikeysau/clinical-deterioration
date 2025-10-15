@@ -46,3 +46,12 @@ body {
   padding: 2rem;
   text-align: center;
 }
+
+.content-wrapper {
+  max-width: 1000px;     /* control width, e.g., 800–1200px works well */
+  margin: 0 auto;         /* centers the content */
+  padding: 2rem;          /* adds breathing room */
+  background-color: white; /* optional, for contrast */
+  box-shadow: 0 0 10px rgba(0,0,0,0.05); /* subtle card effect */
+  border-radius: 10px;     /* optional rounded corners */
+}
