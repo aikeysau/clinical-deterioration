@@ -13,7 +13,7 @@
     <p class="bio">{{ member.bio }}</p>
   </section>
 
-  <p v-else>Loading member profile...</p>
+  <p v-else>Sorry something went wrong</p>
 </template>
 
 <script setup>
