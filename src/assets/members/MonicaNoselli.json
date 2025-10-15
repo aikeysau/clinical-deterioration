@@ -1,0 +1,9 @@
+{
+    "id": "monica",
+    "name": "Monica Noselli",
+    "role": "PhD Candidate",
+    "background": "Computer Scientist",
+    "belongTolist": "PhD Candidate",
+    "photo": "MonicaNoselli.jpg",
+    "bio": "Monica builds the web platform and interfaces."
+  }

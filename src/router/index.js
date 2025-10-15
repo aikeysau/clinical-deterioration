@@ -10,7 +10,18 @@ const routes = [
   { path: "/about", component: About },
   { path: "/projects", component: Projects },
   { path: "/people", component: People },
-  { path: '/people/:id', component: Member, name: 'Member', props: true },
+  // { path: '/people/:id', component: Member, name: 'Member', props: true },
+  {
+  path: '/member/:id',
+  name: 'Member',
+  component: () => import('../views/Member.vue')
+},
+{
+  path: '/edit/:id?',
+  name: 'EditProfile',
+  component: () => import('../views/EditProfile.vue'),
+  meta: { requiresAuth: true }
+}
 ];
 
 const router = createRouter({

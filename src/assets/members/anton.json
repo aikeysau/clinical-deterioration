@@ -1,0 +1,9 @@
+{
+    "id": "anton",
+    "name": "Anton van der Vegt",
+    "role": "Researcher",
+    "background": "Computer Scientist",
+    "belongTolist": "Supervisor",
+    "photo": "anton.jpg",
+    "bio": "Anton works on AI models for patient deterioration."
+  }

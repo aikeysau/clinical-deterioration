@@ -1,48 +1,68 @@
 <template>
-  <section v-if="member">
-    <div class="member-profile">
-      <!-- Image binding: no leading slash, matches JSON path -->
-      <img :src="member.photo" :alt="member.name" class="member-photo" />
-      <h2>{{ member.name }}</h2>
-      <h4>{{ member.role }}</h4>
-      <p>{{ member.bio }}</p>
-      <router-link to="/people">← Back to Team</router-link>
-    </div>
+  <section v-if="member" class="member-profile">
+    <!-- Dynamic image -->
+    <img
+      v-if="memberPhoto"
+      :src="memberPhoto"
+      :alt="member.name"
+      class="member-image"
+    />
+
+    <h2>{{ member.name }}</h2>
+    <p class="role">{{ member.role }}</p>
+    <p class="bio">{{ member.bio }}</p>
   </section>
-  <p v-else>Member not found.</p>
+
+  <p v-else>Loading member profile...</p>
 </template>
 
-<script>
-import membersData from "../data/members.json"
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 
-export default {
-  name: "Member",
-  data() {
-    return { member: null }
-  },
-  mounted() {
-    const memberId = this.$route.params.id
-    // Find the member object by ID
-    this.member = membersData.find(m => m.id === memberId)
+const route = useRoute()
+const member = ref(null)
+const memberPhoto = ref(null)
+
+onMounted(async () => {
+  const id = route.params.id
+
+  try {
+    // Dynamically import the member JSON
+    const data = await import(`../assets/members/${id}.json`)
+    member.value = data.default
+
+    // Dynamically resolve the image
+    if (member.value?.photo) {
+      memberPhoto.value = new URL(`../assets/members/images/${member.value.photo}`, import.meta.url).href
+    }
+  } catch (err) {
+    console.error('Error loading member JSON:', err)
   }
-}
+})
 </script>
 
 <style scoped>
 .member-profile {
-  max-width: 400px;
+  max-width: 600px;
   margin: 2rem auto;
   text-align: center;
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-.member-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
+
+.member-image {
+  width: 200px;        /* fixed width */
+  height: 200px;       /* fixed height */
+  border-radius: 12px;
+  object-fit: cover;   /* scales and crops the image to fit the box */
+  margin-bottom: 0.5rem;
+}
+
+.role {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.bio {
+  color: #555;
 }
 </style>
